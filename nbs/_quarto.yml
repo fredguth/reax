@@ -12,7 +12,7 @@ website:
     search: true
     collapse-below: lg
     left:
-      - text: Svelte Stores in Python
+      - text: Experimental Haiku/JAX training package
     right:
       - icon: github
         href: "https://github.com/fredguth/reax"
@@ -23,8 +23,10 @@ website:
         contents: index.ipynb
       - section: API
         contents:
-          - 00_stores.ipynb
-          - 10_utils.ipynb
+          - 00_core.ipynb
+          - 00_data.ipynb
+          - 01_stores.ipynb
+          - 90_utils.ipynb
   page-footer: 
     left: "Copyright 2023, Fred Guth"
     right:

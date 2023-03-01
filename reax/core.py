@@ -18,13 +18,14 @@ import optax
 import torch
 from torch.utils.data import DataLoader
 
-# %% ../nbs/00_core.ipynb 14
+# %% ../nbs/00_core.ipynb 15
 PyTree = Union[
     Tensor, Tuple["PyTree", ...], List["PyTree"], Dict[Hashable, "PyTree"], hk.Params, hk.State, optax.OptState, None
 ]  # I hope that with this definition it will work in  Haiku and Flax
 
 ApplyFn = Callable[..., Tuple[Tensor, PyTree]] # returns result and state (aka buffers)
 
+# %% ../nbs/00_core.ipynb 16
 class Model(NamedTuple):
     params: PyTree # the models parameters, weights and biases
     state: PyTree  # the model auxiliary state, e.g. batchnorm buffers
@@ -43,20 +44,20 @@ class Model(NamedTuple):
         params, state = jax.jit(init)(next(Model.rng), x)
         return Model(params=params, state=state, apply=apply, input_shape=x.shape)
 
-# %% ../nbs/00_core.ipynb 17
+# %% ../nbs/00_core.ipynb 19
 import fastcore.all as fc
 from tabulate import tabulate
 from .utils import str_tree
 # the tabulate package is also used by Haiku in its hk.experimental methods
 
-# %% ../nbs/00_core.ipynb 18
+# %% ../nbs/00_core.ipynb 20
 @fc.patch
 def __repr__(self:Model)->str:
     table = [["Params", "State"],[str_tree(self.params), str_tree(self.state)]]
     return f"{self.__class__.__name__}:\n{tabulate(table, headers='firstrow', tablefmt='grid')}"
 
 
-# %% ../nbs/00_core.ipynb 20
+# %% ../nbs/00_core.ipynb 22
 @fc.patch
 def __str__(self:Model) -> str:
     s1 = hk.experimental.tabulate(self.apply,
@@ -64,10 +65,10 @@ def __str__(self:Model) -> str:
     s2 = '\n'.join(self.__repr__().split('\n')[1:])
     return f"{s1}\n{s2}"
 
-# %% ../nbs/00_core.ipynb 24
+# %% ../nbs/00_core.ipynb 26
 from .stores import Writable, Notifier
 
-# %% ../nbs/00_core.ipynb 26
+# %% ../nbs/00_core.ipynb 28
 class ModelStore(Writable[Model]):
     ''' A Model store. Custom Writable store'''
     def __init__(self,
@@ -76,11 +77,11 @@ class ModelStore(Writable[Model]):
         start: Notifier = lambda x: None # we won't need a Start/Stop Notifier
         super().__init__(initial_value, start)
 
-# %% ../nbs/00_core.ipynb 29
+# %% ../nbs/00_core.ipynb 31
 import yaml
 
 
-# %% ../nbs/00_core.ipynb 30
+# %% ../nbs/00_core.ipynb 32
 @fc.patch
 def __repr__(self:ModelStore) -> str:
     params, state, apply, shape = self.value
@@ -89,7 +90,7 @@ def __repr__(self:ModelStore) -> str:
                 [str_tree(m.params), str_tree(m.state), yaml.dump([{i:str(f)} for i,f in enumerate(self.subscribers)])]]
     return f"{self.__class__.__name__}:\n{tabulate(table, headers='firstrow', tablefmt='grid')}"
 
-# %% ../nbs/00_core.ipynb 32
+# %% ../nbs/00_core.ipynb 34
 @fc.patch
 def __str__(self:ModelStore) -> str:
     columns=["input", "module", "owned_params", "output", "params_size"]
@@ -99,14 +100,14 @@ def __str__(self:ModelStore) -> str:
     r+= f"{s}"
     return r
 
-# %% ../nbs/00_core.ipynb 40
+# %% ../nbs/00_core.ipynb 42
 class Optimizer(NamedTuple):
     state: optax.OptState
     apply: Callable
 
 OptimizerStore = Writable[Optimizer]
 
-# %% ../nbs/00_core.ipynb 52
+# %% ../nbs/00_core.ipynb 54
 LossFn = Callable[[Tensor, Tensor], Tensor] # per example loss function
 class Learner:
     '''Basic class for handling the training loop.'''
@@ -119,7 +120,7 @@ class Learner:
         table = [["Model", "DataLoaders", "LossFn", "Optimizer"],[id(self.model), id(self.dls), id(self.loss_func), id(self.optimizer)]]
         return tabulate(table, headers='firstrow', tablefmt='grid')
 
-# %% ../nbs/00_core.ipynb 59
+# %% ../nbs/00_core.ipynb 61
 class TrainingState(NamedTuple):
 
     epochs: int                     # number of epochs to fit
@@ -140,15 +141,15 @@ class TrainingState(NamedTuple):
     def __str__(self) -> str:
         return tabulate(list(self._asdict().items()))
 
-# %% ../nbs/00_core.ipynb 61
+# %% ../nbs/00_core.ipynb 63
 from .stores import Readable
 import itertools
 
-# %% ../nbs/00_core.ipynb 62
+# %% ../nbs/00_core.ipynb 64
 class TrainingStore(Readable[TrainingState]):
     ''' A store that keeps tracking of the training loop state'''
 
-# %% ../nbs/00_core.ipynb 67
+# %% ../nbs/00_core.ipynb 69
 @fc.patch
 def __repr__(self: TrainingStore) -> str:
         return f"{self.__class__.__name__}:\n{self}"
