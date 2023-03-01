@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Fill in a module description here">
+<meta name="description" content="This is the core of the Reax lib.">
 
 <title>reax - core</title>
 <style>
@@ -21,6 +21,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -63,14 +126,14 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="reax - core">
-<meta property="og:description" content="Fill in a module description here">
+<meta property="og:description" content="This is the core of the `Reax` lib.">
 <meta property="og:site-name" content="reax">
 <meta name="twitter:title" content="reax - core">
-<meta name="twitter:description" content="Fill in a module description here">
+<meta name="twitter:description" content="This is the core of the `Reax` lib.">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +144,23 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">reax</span>
     </a>
   </div>
-          <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="dropdown-header">
+ <span class="menu-text">Svelte Stores in Python</span></li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fredguth/reax"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -94,36 +173,69 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Welcome</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">reax</a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./core.html" class="sidebar-item-text sidebar-link active">core</a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">API</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  00_stores.ipynb
+  </li>
+          <li class="sidebar-item">
+  10_utils.ipynb
+  </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#foo" id="toc-foo" class="nav-link active" data-scroll-target="#foo">foo</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a>
+  <ul class="collapse">
+  <li><a href="#model-1" id="toc-model-1" class="nav-link" data-scroll-target="#model-1">Model</a></li>
+  <li><a href="#modelstore" id="toc-modelstore" class="nav-link" data-scroll-target="#modelstore">ModelStore</a></li>
+  <li><a href="#optimizer-1" id="toc-optimizer-1" class="nav-link" data-scroll-target="#optimizer-1">Optimizer</a></li>
+  </ul></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a>
+  <ul class="collapse">
+  <li><a href="#learner-1" id="toc-learner-1" class="nav-link" data-scroll-target="#learner-1">Learner</a></li>
+  <li><a href="#trainingstate" id="toc-trainingstate" class="nav-link" data-scroll-target="#trainingstate">TrainingState</a></li>
+  <li><a href="#trainingstore" id="toc-trainingstore" class="nav-link" data-scroll-target="#trainingstore">TrainingStore</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fredguth/reax/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -132,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Fill in a module description here
+    This is the core of the <code>Reax</code> lib.
   </div>
 </div>
 
@@ -148,14 +260,880 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>env: XLA_PYTHON_CLIENT_MEM_FRACTION=0.2</code></pre>
+</div>
+</div>
+<section id="data" class="level4">
+<h4 class="anchored" data-anchor-id="data">Data</h4>
+<p>As in <code>miniai</code>, we wil be using the <code>FashionMnist</code> Dataset for demonstration. <code>Reax</code> is not intended to be a complete library, the <code>data</code> module is just a copy from <a href="">miniai</a> to make it work.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torchvision</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torchvision.transforms <span class="im">as</span> transforms</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> reax.data <span class="im">import</span> DataLoaders, Batch, Tensor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>XMEAN,XSTD, BATCH_SIZE, NUM_CLASSES <span class="op">=</span> <span class="fl">0.28</span>,<span class="fl">0.35</span>, <span class="dv">500</span>, <span class="dv">10</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tfm <span class="op">=</span> transforms.Compose([transforms.PILToTensor(), transforms.Lambda(<span class="kw">lambda</span> x: x<span class="op">/</span><span class="dv">255</span>), transforms.Normalize(XMEAN, XSTD), transforms.Lambda(<span class="kw">lambda</span> x: torch.flatten(x))])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> partial(torchvision.datasets.FashionMNIST,root<span class="op">=</span><span class="st">"data"</span>,download<span class="op">=</span><span class="va">True</span>, transform <span class="op">=</span> tfm)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>train_ds, valid_ds <span class="op">=</span> ds(train<span class="op">=</span><span class="va">True</span>), ds(train<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>tdl <span class="op">=</span> DataLoader(train_ds, batch_size<span class="op">=</span>BATCH_SIZE)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>vdl <span class="op">=</span> DataLoader(valid_ds, batch_size<span class="op">=</span>BATCH_SIZE)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataLoaders(tdl, vdl)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>batch <span class="op">=</span> Batch(<span class="op">*</span><span class="bu">map</span>(jnp.array, <span class="bu">next</span>(<span class="bu">iter</span>(dls.train))))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>batch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Batch(input=Array[500, 784] n=392000 x∈[-0.800, 2.057] μ=0.011 σ=1.006 gpu:0, target=Array[500] i32 x∈[0, 9] μ=4.402 σ=2.838 gpu:0)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="model" class="level2">
+<h2 class="anchored" data-anchor-id="model">Model</h2>
+<p>The basic <a href="https://dm-haiku.readthedocs.io/">Haiku</a> object to represent a model is a <a href="https://dm-haiku.readthedocs.io/en/latest/api.html#transformedwithstate">TransformedWithState</a>. It represents a <code>function</code> or <code>module</code> that has been transformed by a <code>hk.transform</code> function. Here we are using <code>hk.transform_with_state</code> which is the superset of the transform functions.</p>
+<p>State in the <code>Haiku</code> lingo means everything that make your original <code>Callable</code> not a pure function. It is the context or state. Somoe common <code>DNN</code> modules like <code>batch_norm</code>can keep some <code>state</code> to perform its work. <code>State</code>, <code>Buffers</code> and <code>Context</code> are common names for this.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> forward(x:jnp.array) <span class="op">-&gt;</span>jnp.ndarray:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> hk.nets.MLP(output_sizes<span class="op">=</span>[<span class="dv">50</span>,NUM_CLASSES])(x) <span class="co"># todo: remove NUM_CLASSES dependency</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>network <span class="op">=</span> hk.transform_with_state(forward)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(network)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>haiku._src.transform.TransformedWithState</code></pre>
+</div>
+</div>
+<p>In <code>Reax</code>, a <a href="https://fredguth.github.io/reax/core.html#model"><code>Model</code></a> is an immutable object. <a href="https://jax.readthedocs.io/en/latest/pytrees.html">PyTrees</a> are JAX datastructures.</p>
 <hr>
-<section id="foo" class="level3">
-<h3 class="anchored" data-anchor-id="foo">foo</h3>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L28" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="model-1" class="level3">
+<h3 class="anchored" data-anchor-id="model-1">Model</h3>
 <blockquote class="blockquote">
-<pre><code> foo ()</code></pre>
+<pre><code> Model (params:Union[jax.Array,numpy.ndarray,Tuple[ForwardRef('PyTree'),..
+        .],List[ForwardRef('PyTree')],Dict[Hashable,ForwardRef('PyTree')],
+        Mapping[str,Mapping[str,jax.Array]],Iterable[ForwardRef('ArrayTree
+        ')],Mapping[Any,ForwardRef('ArrayTree')],NoneType], state:Union[ja
+        x.Array,numpy.ndarray,Tuple[ForwardRef('PyTree'),...],List[Forward
+        Ref('PyTree')],Dict[Hashable,ForwardRef('PyTree')],Mapping[str,Map
+        ping[str,jax.Array]],Iterable[ForwardRef('ArrayTree')],Mapping[Any
+        ,ForwardRef('ArrayTree')],NoneType], apply:Callable[...,Tuple[Unio
+        n[jax.Array,numpy.ndarray],Union[jax.Array,numpy.ndarray,Tuple[For
+        wardRef('PyTree'),...],List[ForwardRef('PyTree')],Dict[Hashable,Fo
+        rwardRef('PyTree')],Mapping[str,Mapping[str,jax.Array]],Iterable[F
+        orwardRef('ArrayTree')],Mapping[Any,ForwardRef('ArrayTree')],NoneT
+        ype]]], input_shape:Tuple[int,...])</code></pre>
 </blockquote>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> Model.from_haiku(transformed<span class="op">=</span>network, x<span class="op">=</span>batch.<span class="bu">input</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="ansi-escaped-output">
+<pre>Model(params={'mlp/~/linear_0': {'b': Array[50] <span style="color:rgb(127,127,127)">all_zeros</span> gpu:0, 'w': Array[784, 50] n=39200 x∈[-0.071, 0.071] μ=0.000 σ=0.032 gpu:0}, 'mlp/~/linear_1': {'b': Array[10] <span style="color:rgb(127,127,127)">all_zeros</span> gpu:0 [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], 'w': Array[50, 10] n=500 x∈[-0.276, 0.270] μ=-0.001 σ=0.121 gpu:0}}, state={}, apply=&lt;function transform_with_state.&lt;locals&gt;.apply_fn at 0x7f41486c1d30&gt;, input_shape=(500, 784))</pre>
+</div>
+</div>
+</div>
+<p>Let’s keep us sane and improve the model representation.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> Model.from_haiku(transformed<span class="op">=</span>network, x<span class="op">=</span>batch.<span class="bu">input</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>Model:
++---------------------------------------------+---------+
+| Params                                      | State   |
++=============================================+=========+
+| mlp/~/linear_0:                             | {}      |
+|   b: all_zeros                              |         |
+|   w: x∈[-0.071, 0.071] μ=-9.844e-05 σ=0.032 |         |
+| mlp/~/linear_1:                             |         |
+|   b: all_zeros                              |         |
+|   w: x∈[-0.275, 0.279] μ=-0.002 σ=0.123     |         |
++---------------------------------------------+---------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------------+-------------------------+-----------------+-------------+---------------+
+| Input        | Module                  | Module params   | Output      |   Param count |
++==============+=========================+=================+=============+===============+
+| f32[500,784] | mlp (MLP)               |                 | f32[500,10] |        39,760 |
++--------------+-------------------------+-----------------+-------------+---------------+
+| f32[500,784] | mlp/~/linear_0 (Linear) | w: f32[784,50]  | f32[500,50] |        39,250 |
+|              |  └ mlp (MLP)            | b: f32[50]      |             |               |
++--------------+-------------------------+-----------------+-------------+---------------+
+| f32[500,50]  | mlp/~/linear_1 (Linear) | w: f32[50,10]   | f32[500,10] |           510 |
+|              |  └ mlp (MLP)            | b: f32[10]      |             |               |
++--------------+-------------------------+-----------------+-------------+---------------+
++---------------------------------------------+---------+
+| Params                                      | State   |
++=============================================+=========+
+| mlp/~/linear_0:                             | {}      |
+|   b: all_zeros                              |         |
+|   w: x∈[-0.071, 0.071] μ=-9.844e-05 σ=0.032 |         |
+| mlp/~/linear_1:                             |         |
+|   b: all_zeros                              |         |
+|   w: x∈[-0.275, 0.279] μ=-0.002 σ=0.123     |         |
++---------------------------------------------+---------+</code></pre>
+</div>
+</div>
+<section id="model-reactivity-model-store" class="level4">
+<h4 class="anchored" data-anchor-id="model-reactivity-model-store">Model Reactivity (Model Store)</h4>
+<p>Ok, now we will start to play with reactivity. In <code>fastai</code> (also in Keras, vanilla PyTorch, etc) there is the concept of <code>Callbacks</code>. It is the way to be notified when something of interest happens.</p>
+<blockquote class="blockquote">
+<p>Don’t nudge me, let me <strong>call you back</strong> when I have something for you!</p>
+</blockquote>
+<p>In general, you will need a callback only during training, after all, it is when your <code>things</code> change. The model, the hyperparameters, the metrics, etc.</p>
+<p>The <strong>fastai/miniai</strong> <a href="https://fredguth.github.io/reax/core.html#learner"><code>Learner</code></a> is an <code>Observable</code> and you can hold multiple callbacks. Every callback keep its state in the Learner object. You can have callbacks for metrics, for logging and saving the training process… callbacks that depend on other callbacks! That is why there is that … shall I say… <strong>ugly</strong> <code>order</code> property in the <code>Callback</code>class.</p>
+<p><code>Reax</code> is just an experiment on how to handle this reactivity in another way. Maybe it will prove itself too bloated… or not. I decided to do it in <code>JAX/Haiku</code> to force a <code>functional programming</code> perspective.</p>
+<p>The basic abstraction in <code>Reax</code> are <code>stores</code>, observables that hold any value. We could have used [RxPy] which is an incredible package. But its superpowers may be too much for what we need. That is why I took inspiration from the <code>Svelte</code> JS framework to create <code>stores</code> (it became its own package, <a href="https://fredguth.github.io/sveltish">Sveltish</a>).</p>
+<p>A <a href="https://fredguth.github.io/reax/core.html#modelstore"><code>ModelStore</code></a> is just a <a href="https://fredguth.github.io/reax/stores.html#writable"><code>Writable</code></a> store that holds values of type <a href="https://fredguth.github.io/reax/core.html#model"><code>Model</code></a>.</p>
+<hr>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L71" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+</section>
+<section id="modelstore" class="level3">
+<h3 class="anchored" data-anchor-id="modelstore">ModelStore</h3>
+<blockquote class="blockquote">
+<pre><code> ModelStore (initial_value:__main__.Model)</code></pre>
+</blockquote>
+<p>A Model store. Custom Writable store</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>initial_value</td>
+<td>Model</td>
+<td>Initial value of the store</td>
+</tr>
+<tr class="even">
+<td><strong>Returns</strong></td>
+<td><strong>None</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="improving-the-modelstore-representation" class="level4">
+<h4 class="anchored" data-anchor-id="improving-the-modelstore-representation">Improving the ModelStore representation</h4>
+<p>We also may improve its representation.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ms <span class="op">=</span> ModelStore(m)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>ModelStore:
++---------------------------------------------+---------+-------------+
+| Params                                      | State   | Callbacks   |
++=============================================+=========+=============+
+| mlp/~/linear_0:                             | {}      | []          |
+|   b: all_zeros                              |         |             |
+|   w: x∈[-0.071, 0.071] μ=-9.844e-05 σ=0.032 |         |             |
+| mlp/~/linear_1:                             |         |             |
+|   b: all_zeros                              |         |             |
+|   w: x∈[-0.275, 0.279] μ=-0.002 σ=0.123     |         |             |
++---------------------------------------------+---------+-------------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------------+-------------------------+-----------------+-------------+---------------+
+| Input        | Module                  | Module params   | Output      |   Param count |
++==============+=========================+=================+=============+===============+
+| f32[500,784] | mlp (MLP)               |                 | f32[500,10] |        39,760 |
++--------------+-------------------------+-----------------+-------------+---------------+
+| f32[500,784] | mlp/~/linear_0 (Linear) | w: f32[784,50]  | f32[500,50] |        39,250 |
+|              |  └ mlp (MLP)            | b: f32[50]      |             |               |
++--------------+-------------------------+-----------------+-------------+---------------+
+| f32[500,50]  | mlp/~/linear_1 (Linear) | w: f32[50,10]   | f32[500,10] |           510 |
+|              |  └ mlp (MLP)            | b: f32[10]      |             |               |
++--------------+-------------------------+-----------------+-------------+---------------+
++---------------------------------------------+---------+-------------+
+| Params                                      | State   | Callbacks   |
++=============================================+=========+=============+
+| mlp/~/linear_0:                             | {}      | []          |
+|   b: all_zeros                              |         |             |
+|   w: x∈[-0.071, 0.071] μ=-9.844e-05 σ=0.032 |         |             |
+| mlp/~/linear_1:                             |         |             |
+|   b: all_zeros                              |         |             |
+|   w: x∈[-0.275, 0.279] μ=-0.002 σ=0.123     |         |             |
++---------------------------------------------+---------+-------------+</code></pre>
+</div>
+</div>
+<p>A <code>callback</code> is any <code>Callable</code> that you pass on <code>subscribe</code>.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>u1 <span class="op">=</span> ms.subscribe(<span class="kw">lambda</span> x: <span class="bu">print</span>(<span class="st">"1: callback 1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1: callback 1</code></pre>
+</div>
+</div>
+<p>A change in the store value, triggers all callbacks subscribed to it.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> ms.get()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ms.<span class="bu">set</span>(Model(<span class="op">**</span>(m._asdict()<span class="op">|</span>{<span class="st">"state"</span>: {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>}})))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1: callback 1</code></pre>
+</div>
+</div>
+</section>
+<section id="optimizer" class="level4">
+<h4 class="anchored" data-anchor-id="optimizer">Optimizer</h4>
+<p>You can have different <code>stores</code> for different things. For example, this is a simpler one to deal with the optimizer.</p>
+<hr>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L103" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+</section>
+<section id="optimizer-1" class="level3">
+<h3 class="anchored" data-anchor-id="optimizer-1">Optimizer</h3>
+<blockquote class="blockquote">
+<pre><code> Optimizer (state:Union[jax.Array,Iterable[ForwardRef('ArrayTree')],Mappin
+            g[Any,ForwardRef('ArrayTree')]], apply:Callable)</code></pre>
+</blockquote>
+<p>By the way, we will use <a href="https://optax.readthedocs.io/">Optax</a>, which is a good companion for <code>Haiku</code>.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>grad_tfm <span class="op">=</span> optax.sgd(<span class="fl">1e-3</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">apply</span> <span class="op">=</span> grad_tfm.update</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>optState <span class="op">=</span> grad_tfm.init(m.params) <span class="co"># you initialize the optimizer with the model params</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> Optimizer(state<span class="op">=</span>optState, <span class="bu">apply</span><span class="op">=</span><span class="bu">apply</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>optimizer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>Optimizer(state=(EmptyState(), EmptyState()), apply=&lt;function chain.&lt;locals&gt;.update_fn at 0x7f41484f4280&gt;)</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>os<span class="op">=</span> OptimizerStore(optimizer)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>u2 <span class="op">=</span> os.subscribe(<span class="kw">lambda</span> x: <span class="bu">print</span>(<span class="ss">f"callback 2: </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>callback 2: Optimizer(state=(EmptyState(), EmptyState()), apply=&lt;function chain.&lt;locals&gt;.update_fn at 0x7f41484f4280&gt;)</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>grad_tf2 <span class="op">=</span> optax.adam(<span class="fl">1e-4</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>optState2 <span class="op">=</span> grad_tf2.init(m.params)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>os.<span class="bu">set</span>(Optimizer(state<span class="op">=</span>optState2, <span class="bu">apply</span><span class="op">=</span>grad_tf2.update))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>callback 2: Optimizer(state=(ScaleByAdamState(count=Array i32 gpu:0 0, mu={'mlp/~/linear_0': {'b': Array[50] all_zeros gpu:0, 'w': Array[784, 50] all_zeros gpu:0}, 'mlp/~/linear_1': {'b': Array[10] all_zeros gpu:0 [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], 'w': Array[50, 10] all_zeros gpu:0}}, nu={'mlp/~/linear_0': {'b': Array[50] all_zeros gpu:0, 'w': Array[784, 50] all_zeros gpu:0}, 'mlp/~/linear_1': {'b': Array[10] all_zeros gpu:0 [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], 'w': Array[50, 10] all_zeros gpu:0}}), EmptyState()), apply=&lt;function chain.&lt;locals&gt;.update_fn at 0x7f41484f4ee0&gt;)</code></pre>
+</div>
+</div>
+<p>Cleaning up… you should remember to unsubscribe when you are done with a store.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>u1(), u2()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>(None, None)</code></pre>
+</div>
+</div>
+<p>m = Model.from_haiku(transformed=network, x=batch.input) ms = ModelStore(m) u1 = ms.subscribe(lambda x: print(f”cb 1:“))</p>
+</section>
+</section>
+<section id="training" class="level2">
+<h2 class="anchored" data-anchor-id="training">Training</h2>
+<p>Finally we arrived at the Training, the <code>core</code> of the <code>core</code> <code>¯\_(ツ)_/¯</code></p>
+<p>Here is where we will most need callbacks.</p>
+<section id="learner" class="level4">
+<h4 class="anchored" data-anchor-id="learner">Learner</h4>
+<p>Like in <code>fastai</code>, we create a <a href="https://fredguth.github.io/reax/core.html#learner"><code>Learner</code></a> class that will deal with the training.</p>
+<hr>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L111" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="learner-1" class="level3">
+<h3 class="anchored" data-anchor-id="learner-1">Learner</h3>
+<blockquote class="blockquote">
+<pre><code> Learner (model:__main__.ModelStore, dls:reax.data.DataLoaders, loss_func:
+          Callable[[Union[jax.Array,numpy.ndarray],Union[jax.Array,numpy.n
+          darray]],Union[jax.Array,numpy.ndarray]],
+          optimizer:reax.stores.Writable[__main__.Optimizer])</code></pre>
+</blockquote>
+<p>Basic class for handling the training loop.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>learner <span class="op">=</span> Learner(model<span class="op">=</span>ms, dls<span class="op">=</span>dls, loss_func<span class="op">=</span>optax.softmax_cross_entropy_with_integer_labels, optimizer<span class="op">=</span>os)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>learner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>Learner:
++-----------------+-----------------+-----------------+-----------------+
+|           Model |     DataLoaders |          LossFn |       Optimizer |
++=================+=================+=================+=================+
+| 139918362578752 | 139918365725360 | 139922468264256 | 139918362655424 |
++-----------------+-----------------+-----------------+-----------------+</code></pre>
+</div>
+</div>
+<p>Learner itself, is not a store, but holds different stores for different aspects of the training.</p>
+<p>We have a <a href="https://fredguth.github.io/reax/core.html#modelstore"><code>ModelStore</code></a>, an <code>OptimizerStore</code>… it is only missing the most important thing we want to <strong>observe</strong>… the training loop itself. We need a <a href="https://fredguth.github.io/reax/core.html#trainingstore"><code>TrainingStore</code></a>.</p>
+<p>But for that… let’s first examine what we need. Let’s take a look in the <strong>training loop</strong>:</p>
+<section id="fit-the-training-loop" class="level4">
+<h4 class="anchored" data-anchor-id="fit-the-training-loop"><code>Fit</code>: the training Loop</h4>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pseudo-code</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fit(epochs: <span class="bu">int</span>)<span class="op">-&gt;</span><span class="va">None</span>:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Train the model for a number of epochs.'''</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># before fit</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># is_training</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        one_epoch(dls.train) <span class="co"># train for one epoch</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># is_validating</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        one_epoch(dls.valid) <span class="co"># validate for one epoch</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># should halt epochs?</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># after fit</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> one_epoch(dl)<span class="op">-&gt;</span><span class="va">None</span>:</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Train or validate for one epoch.'''</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># before epoch</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> batch_n, batch <span class="kw">in</span> <span class="bu">enumerate</span>(dl): </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>        one_batch(batch_n, batch)</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># should halt batches?</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># after epoch</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> one_batch(batch_n: <span class="bu">int</span>, batch: Batch)<span class="op">-&gt;</span><span class="va">None</span>:</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Train or validate for one batch.'''</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># before batch</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>    predict(...) <span class="co"># preds</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>    evaluate(...)<span class="co"># loss</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    update model(...) <span class="cf">if</span> is_training</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># after batch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Our <a href="https://fredguth.github.io/reax/core.html#trainingstore"><code>TrainingStore</code></a> shall tell us where we are in the training loop and some information relevant at this point.</p>
+<blockquote class="blockquote">
+<p>I am <code>training</code>, <code>epoch</code> 5, <code>iteration</code> 345, after <code>evaluate</code> with certain <code>current loss</code>.</p>
+</blockquote>
+<p>Another aspect is that it seems it should be a <a href="https://fredguth.github.io/reax/stores.html#readable"><code>Readable</code></a> store, afterall, we don’t want any callback being able to change information like: <code>in which batch of which epoch am I?</code></p>
+<p>Exceptionally, we want to tell the <a href="https://fredguth.github.io/reax/core.html#trainingstore"><code>TrainingStore</code></a> to halt.</p>
+<p>Let’s start with:</p>
+<hr>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L123" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+</section>
+<section id="trainingstate" class="level3">
+<h3 class="anchored" data-anchor-id="trainingstate">TrainingState</h3>
+<blockquote class="blockquote">
+<pre><code> TrainingState (epochs:int, epoch:int, step:int, iter:int,
+                batch:Optional[reax.data.Batch], last:Dict=None,
+                is_running:bool=False, is_training:bool=False,
+                is_validating:bool=False, should_halt:bool=False)</code></pre>
+</blockquote>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> TrainingState(epochs<span class="op">=</span><span class="dv">0</span>, epoch<span class="op">=</span><span class="dv">0</span>, step<span class="op">=</span><span class="dv">0</span>, <span class="bu">iter</span><span class="op">=</span><span class="dv">0</span>, batch<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>TrainingState:
+-------------  -----
+epochs             0
+epoch              0
+step               0
+iter               0
+batch
+last
+is_running     False
+is_training    False
+is_validating  False
+should_halt    False
+-------------  -----</code></pre>
+</div>
+</div>
+<hr>
+<p><a href="https://github.com/fredguth/reax/blob/main/reax/core.py#L148" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="trainingstore" class="level3">
+<h3 class="anchored" data-anchor-id="trainingstore">TrainingStore</h3>
+<blockquote class="blockquote">
+<pre><code> TrainingStore (initial_value:T, start:Notifier)</code></pre>
+</blockquote>
+<p>A store that keeps tracking of the training loop state</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 38%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>initial_value</td>
+<td>T</td>
+<td>initial value of the store</td>
+</tr>
+<tr class="even">
+<td>start</td>
+<td>Notifier</td>
+<td>function called when the first subscriber is added</td>
+</tr>
+<tr class="odd">
+<td><strong>Returns</strong></td>
+<td><strong>None</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="trainingstore-representation" class="level4">
+<h4 class="anchored" data-anchor-id="trainingstore-representation">TrainingStore representation</h4>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a = [("A", "B", "C"), (1,2,3)]</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># b = [("D", "E", None), (4,5,None)]</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [(<span class="st">"A"</span>, <span class="dv">1</span>), [<span class="st">"B"</span>, <span class="dv">2</span>], [<span class="st">"C"</span>, <span class="dv">3</span>]]</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [[<span class="st">"D"</span>, <span class="dv">4</span>], [<span class="st">"E"</span>, <span class="dv">5</span>]]</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>a))</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>b))</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="bu">list</span>(itertools.zip_longest(<span class="op">*</span>c,<span class="op">*</span>d))</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tabulate(table, headers<span class="op">=</span>[<span class="st">''</span>,<span class="st">'H1'</span>,<span class="st">''</span>, <span class="st">"H2"</span>], tablefmt<span class="op">=</span><span class="st">'grid'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+----+------+----+------+
+|    |   H1 |    |   H2 |
++====+======+====+======+
+| A  |    1 | D  |    4 |
++----+------+----+------+
+| B  |    2 | E  |    5 |
++----+------+----+------+
+| C  |    3 |    |      |
++----+------+----+------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [[<span class="st">"A"</span>, <span class="dv">1</span>], [<span class="st">"B"</span>, <span class="dv">2</span>], [<span class="st">"C"</span>, <span class="dv">3</span>]]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> []</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>a))</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>b))</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="bu">list</span>(itertools.zip_longest(<span class="op">*</span>c,<span class="op">*</span>d))</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tabulate(table, headers<span class="op">=</span>[<span class="st">''</span>,<span class="st">'H1'</span>,<span class="st">''</span>, <span class="st">"H2"</span>], tablefmt<span class="op">=</span><span class="st">'grid'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+----+------+
+|    |   H1 |
++====+======+
+| A  |    1 |
++----+------+
+| B  |    2 |
++----+------+
+| C  |    3 |
++----+------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [(<span class="st">'epoch'</span>, <span class="dv">0</span>), (<span class="st">'step'</span>, <span class="dv">0</span>), (<span class="st">'batch_n'</span>, <span class="dv">0</span>), (<span class="st">'batch'</span>, <span class="va">None</span>), (<span class="st">'metrics'</span>, <span class="va">None</span>), (<span class="st">'last_event'</span>, <span class="va">None</span>), (<span class="st">'is_training'</span>, <span class="va">False</span>), (<span class="st">'should_halt'</span>, <span class="va">False</span>)]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [(<span class="st">'0:'</span>, <span class="kw">lambda</span>:<span class="va">None</span>)]</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>a))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(<span class="op">*</span>b))</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="bu">list</span>(itertools.zip_longest(<span class="op">*</span>c,<span class="op">*</span>d))</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tabulate(table, headers<span class="op">=</span>[<span class="st">''</span>,<span class="st">'H1'</span>,<span class="st">''</span>, <span class="st">"H2"</span>], tablefmt<span class="op">=</span><span class="st">'grid'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-------------+-------+----+---------------------------------------+
+|             |    H1 |    | H2                                    |
++=============+=======+====+=======================================+
+| epoch       |     0 | 0: | &lt;function &lt;lambda&gt; at 0x7f414849e670&gt; |
++-------------+-------+----+---------------------------------------+
+| step        |     0 |    |                                       |
++-------------+-------+----+---------------------------------------+
+| batch_n     |     0 |    |                                       |
++-------------+-------+----+---------------------------------------+
+| batch       |       |    |                                       |
++-------------+-------+----+---------------------------------------+
+| metrics     |       |    |                                       |
++-------------+-------+----+---------------------------------------+
+| last_event  |       |    |                                       |
++-------------+-------+----+---------------------------------------+
+| is_training | False |    |                                       |
++-------------+-------+----+---------------------------------------+
+| should_halt | False |    |                                       |
++-------------+-------+----+---------------------------------------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> TrainingStore(t, <span class="kw">lambda</span> x:<span class="va">None</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>u4 <span class="op">=</span> ts.subscribe(<span class="kw">lambda</span> x: <span class="bu">print</span>(<span class="ss">f"callback 4:</span><span class="ch">\n</span><span class="ss"> </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>callback 4:
+ -------------  -----
+epochs             0
+epoch              0
+step               0
+iter               0
+batch
+last
+is_running     False
+is_training    False
+is_validating  False
+should_halt    False
+-------------  -----</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---------------+---------+----+---------------------------------------+
+|               |   State |    | Calbacks                              |
++===============+=========+====+=======================================+
+| epochs        |       0 | 0: | &lt;function &lt;lambda&gt; at 0x7f41484a6700&gt; |
++---------------+---------+----+---------------------------------------+
+| epoch         |       0 |    |                                       |
++---------------+---------+----+---------------------------------------+
+| step          |       0 |    |                                       |
++---------------+---------+----+---------------------------------------+
+| iter          |       0 |    |                                       |
++---------------+---------+----+---------------------------------------+
+| batch         |         |    |                                       |
++---------------+---------+----+---------------------------------------+
+| last          |         |    |                                       |
++---------------+---------+----+---------------------------------------+
+| is_running    |   False |    |                                       |
++---------------+---------+----+---------------------------------------+
+| is_training   |   False |    |                                       |
++---------------+---------+----+---------------------------------------+
+| is_validating |   False |    |                                       |
++---------------+---------+----+---------------------------------------+
+| should_halt   |   False |    |                                       |
++---------------+---------+----+---------------------------------------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>unsubs <span class="op">=</span> []</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>):</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> ts.subscribe(<span class="kw">lambda</span> x: <span class="bu">print</span>(<span class="ss">f"callback: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>))</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    unsubs.append(u)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>callback: 0
+callback: 1
+callback: 2
+callback: 3
+callback: 4
+callback: 5
+callback: 6
+callback: 7
+callback: 8
+callback: 9
+callback: 10
+callback: 11</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>TrainingStore:
++---------------+---------+-----+---------------------------------------+
+|               |   State |     | Calbacks                              |
++===============+=========+=====+=======================================+
+| epochs        |       0 | 0:  | &lt;function &lt;lambda&gt; at 0x7f41484ad040&gt; |
++---------------+---------+-----+---------------------------------------+
+| epoch         |       0 | 1:  | &lt;function &lt;lambda&gt; at 0x7f41484a6a60&gt; |
++---------------+---------+-----+---------------------------------------+
+| step          |       0 | 2:  | &lt;function &lt;lambda&gt; at 0x7f41484ad280&gt; |
++---------------+---------+-----+---------------------------------------+
+| iter          |       0 | 3:  | &lt;function &lt;lambda&gt; at 0x7f41484a6ca0&gt; |
++---------------+---------+-----+---------------------------------------+
+| batch         |         | 4:  | &lt;function &lt;lambda&gt; at 0x7f41484a64c0&gt; |
++---------------+---------+-----+---------------------------------------+
+| last          |         | 5:  | &lt;function &lt;lambda&gt; at 0x7f41484ad4c0&gt; |
++---------------+---------+-----+---------------------------------------+
+| is_running    |   False | 6:  | &lt;function &lt;lambda&gt; at 0x7f41484a6ee0&gt; |
++---------------+---------+-----+---------------------------------------+
+| is_training   |   False | 7:  | &lt;function &lt;lambda&gt; at 0x7f41484a6700&gt; |
++---------------+---------+-----+---------------------------------------+
+| is_validating |   False | 8:  | &lt;function &lt;lambda&gt; at 0x7f41484a6940&gt; |
++---------------+---------+-----+---------------------------------------+
+| should_halt   |   False | 9:  | &lt;function &lt;lambda&gt; at 0x7f41484ad160&gt; |
++---------------+---------+-----+---------------------------------------+
+|               |         | 10: | &lt;function &lt;lambda&gt; at 0x7f41484a6b80&gt; |
++---------------+---------+-----+---------------------------------------+
+|               |         | 11: | &lt;function &lt;lambda&gt; at 0x7f41484ad3a0&gt; |
++---------------+---------+-----+---------------------------------------+
+|               |         | 12: | &lt;function &lt;lambda&gt; at 0x7f41484a6dc0&gt; |
++---------------+---------+-----+---------------------------------------+</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> u <span class="kw">in</span> unsubs: u()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(state)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class TrainingStore(Writable[TrainingState]):</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @fc.patch</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># def fit(self:Learner, n_epochs, trnState: TrainingState):</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Fit the model for `n_epochs` using batches from `dls`"</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     trnState.emit(Event(id="before_fit", payload=None))</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     for epoch in range(n_epochs):</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.one_epoch(is_training=True, trnState=trnState)</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.one_epoch(is_training=False, trnState=trnState)</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         if (trnState.get().should_halt): break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># training = TrainingStore(TrainingState(epoch=0, step=0, batch_n=0, batch=None, metrics=None, last_event=None))</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="co"># u3 = training.subscribe(lambda x: print(f"3:\n {x}"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @fc.patch</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># def fit(self:Learner, n_epochs, trnState: TrainingState):</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Fit the model for `n_epochs` using batches from `dls`"</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     trnState.emit(Event(id="before_fit", payload=None))</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     for epoch in range(n_epochs):</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.one_epoch(is_training=True, trnState=trnState)</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.one_epoch(is_training=False, trnState=trnState)</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         if (trnState.get().should_halt): break</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># @fc.patch</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="co"># def one_epoch(self:Learner, is_training: bool, trnState: TrainingState):</span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     a = 1</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     # print(f"one_epoch: is_training={is_training}")</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     # print(trnState)</span></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     # trnState._s_is_training = is_training</span></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a><span class="co">#     # self.dl = self.dls.train if is_training else self.dls.valid</span></span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="co">#     # trnState.emit(Event(id=f"before_epoch", payload=trnState._s_epoch))</span></span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a><span class="co">#     # for batch_n, batch in enumerate(self.dl):</span></span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     trnState._s_batch_n, trnState._s_batch  = batch_n, batch</span></span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     # self.one_batch(trnState=trnState)</span></span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     if (trnState._s_should_halt): break</span></span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     # trnState.emit(Event(id=f"after_epoch", payload=trnState._s_epoch))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># params, state, apply, _ = ms.get()</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(42) # random number generator</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># @jax.jit</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># def _predict(params, state, key, batch) -&gt; Tensor:</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     logits, new_state = apply(params, state, key, batch.input)</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     return jnp.argmax (logits, axis=-1), new_state</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="co"># key = next(rng)</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="co"># _predict(params, state, key, batch)</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="co"># @jax.jit</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="co"># def _evaluate(params, state, key, batch) -&gt; Tensor:</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     preds, _ = _predict(params, state, key, batch)</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     return jnp.mean(preds == batch.target)</span></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="co"># from torch.utils.benchmark import Timer</span></span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a><span class="co"># evTimer = Timer(stmt="_evaluate(params, state, key, batch)", globals=globals())</span></span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="co"># evTimer.timeit(1000)</span></span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(jax.random.PRNGKey(42))</span></span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a><span class="co"># def evaluate(model: ModelStore, batch: Batch) -&gt; Tensor:</span></span>
+<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a><span class="co">#     params, state, apply, _ = model.get()</span></span>
+<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     key = next(rng)</span></span>
+<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     return _evaluate(params, state, key, batch)</span></span>
+<span id="cb59-22"><a href="#cb59-22" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluate(ms, batch)</span></span>
+<span id="cb59-23"><a href="#cb59-23" aria-hidden="true" tabindex="-1"></a><span class="co"># @jax.jit</span></span>
+<span id="cb59-24"><a href="#cb59-24" aria-hidden="true" tabindex="-1"></a><span class="co"># def _loss_fn(params, state, key, batch)-&gt; jnp.ndarray:</span></span>
+<span id="cb59-25"><a href="#cb59-25" aria-hidden="true" tabindex="-1"></a><span class="co">#     targs = batch.target</span></span>
+<span id="cb59-26"><a href="#cb59-26" aria-hidden="true" tabindex="-1"></a><span class="co">#     preds, new_state = apply(params, state, key, batch.input)</span></span>
+<span id="cb59-27"><a href="#cb59-27" aria-hidden="true" tabindex="-1"></a><span class="co">#     # return the expectation of the loss wrt the distribution of the targets</span></span>
+<span id="cb59-28"><a href="#cb59-28" aria-hidden="true" tabindex="-1"></a><span class="co">#     return jnp.sum(optax.softmax_cross_entropy_with_integer_labels(preds, targs)/targs.shape[0]), new_state</span></span>
+<span id="cb59-29"><a href="#cb59-29" aria-hidden="true" tabindex="-1"></a><span class="co"># key = next(rng)</span></span>
+<span id="cb59-30"><a href="#cb59-30" aria-hidden="true" tabindex="-1"></a><span class="co"># loss, new_state = _loss_fn(params, state, key, batch)</span></span>
+<span id="cb59-31"><a href="#cb59-31" aria-hidden="true" tabindex="-1"></a><span class="co"># lfTimer = Timer(stmt="_loss_fn(params, state, key, batch)", globals=globals())</span></span>
+<span id="cb59-32"><a href="#cb59-32" aria-hidden="true" tabindex="-1"></a><span class="co"># lfTimer.timeit(1000)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a = NamedTuple('A', [('a', int), ('b', int)])(1,2)</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co"># b = NamedTuple('A', [('a', int), ('b', int)])(3,3)</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># s1 = set(a._asdict().items())</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="co"># s2 = set(b._asdict().items())</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># s1 ^ s2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># trnState = TrainingStore(TrainingState(epoch=0, step=0, batch_n=0, batch=None, metrics=None, last_event=None))</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># logs = []</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># def logger(x):</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     logs.append(x)</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     last = set((logs[-1])._asdict().items())</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     curr = set((x)._asdict().items())</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     print (last ^ curr)</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="co"># u4 = trnState.subscribe(lambda x: logger(x))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># def one_batch(self):</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     self.preds = self.model(self.batch[0])</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     self.loss = self.loss_func(self.preds, self.batch[1])</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     if self.model.training:</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.loss.backward()</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.opt.step()</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.opt.zero_grad()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class Learner():</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __init__(self, model, dls, loss_func, lr, cbs, opt_func=optim.SGD): fc.store_attr()</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     def one_batch(self):</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.preds = self.model(self.batch[0])</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.loss = self.loss_func(self.preds, self.batch[1])</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         if self.model.training:</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.loss.backward()</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.opt.step()</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.opt.zero_grad()</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     def one_epoch(self, train):</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.model.train(train)</span></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.dl = self.dls.train if train else self.dls.valid</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="co">#         try:</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.callback('before_epoch')</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="co">#             for self.iter,self.batch in enumerate(self.dl):</span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a><span class="co">#                 try:</span></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a><span class="co">#                     self.callback('before_batch')</span></span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a><span class="co">#                     self.one_batch()</span></span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a><span class="co">#                     self.callback('after_batch')</span></span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a><span class="co">#                 except CancelBatchException: pass</span></span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.callback('after_epoch')</span></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a><span class="co">#         except CancelEpochException: pass</span></span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a><span class="co">#     def fit(self, n_epochs):</span></span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.n_epochs = n_epochs</span></span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.epochs = range(n_epochs)</span></span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.opt = self.opt_func(self.model.parameters(), self.lr)</span></span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         try:</span></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.callback('before_fit')</span></span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a><span class="co">#             for self.epoch in self.epochs:</span></span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a><span class="co">#                 self.one_epoch(True)</span></span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a><span class="co">#                 self.one_epoch(False)</span></span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a><span class="co">#             self.callback('after_fit')</span></span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a><span class="co">#         except CancelFitException: pass</span></span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a><span class="co">#     def callback(self, method_nm): run_cbs(self.cbs, method_nm, self)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># #|export</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class with_cbs:</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __init__(self, nm): self.nm = nm</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __call__(self, f):</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         def _f(o, *args, **kwargs):</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="co">#             try:</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="co">#                 o.callback(f'before_{self.nm}')</span></span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                 f(o, *args, **kwargs)</span></span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                 o.callback(f'after_{self.nm}')</span></span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="co">#             except globals()[f'Cancel{self.nm.title()}Exception']: pass</span></span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="co">#             finally: o.callback(f'cleanup_{self.nm}')</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="co">#         return _f</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(jax.random.PRNGKey(42))</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="co"># params, state, apply, _ = ms.get()</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># @jax.jit</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># def _loss_fn(params, state, batch)-&gt; Tuple[jnp.ndarray, PyTree]:</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     bs, *_ = batch.target.shape</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     logits, state = apply(params, state, next(rng), batch.input)</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     state = {'a':1, 'b':2}</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     return jnp.sum(optax.softmax_cross_entropy_with_integer_labels(logits, batch.target)/bs)</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co"># def loss_fn(model: ModelStore, batch: Batch) -&gt; float:</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     params, state, apply, _ = model.get()</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     loss_value =  _loss_fn(params, state, batch)</span></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     new_model = Model(**(m._asdict()|{'state': new_state}))</span></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     model.set(new_model)</span></span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     return float(loss_value)</span></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="co"># loss_fn(ms, batch)</span></span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ms</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from functools import partial</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(jax.random.PRNGKey(42))</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># def update(model: ModelStore, optimizer: OptimizerStore, batch: Batch)-&gt;None:</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     m = model.get()</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     o = optimizer.get()</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     f = partial(loss_fn)(model=model)</span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     grads = jax.grad(loss_fn)(batch)</span></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     @jax.jit</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     def _update():</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="co">#         updates, new_optState = o.apply(grads, o.state)</span></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="co">#         new_model_params = optax.apply_updates(m.params, updates)</span></span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="co">#         return new_model_params, new_optState</span></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     new_model_params, new_optState = _update()</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     new_model = Model(**(m._asdict()|{'params': new_model_params}))</span></span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     new_optimizer = Optimizer(**(o._asdict()|{'state': new_optState}))</span></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a><span class="co">#     model.set(new_model)</span></span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a><span class="co">#     optimizer.set(new_optimizer)</span></span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a><span class="co">#     return None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># todo: tentar jax.tree_util.Partial</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># m = ms.get()</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># o = os.get()</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co"># f = partial(loss_fn, model=ms)</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># grads = jax.grad(f)(batch)</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(jax.random.PRNGKey(42))</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="co"># params, state, apply, _ = ms.get()</span></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># def loss_fn():</span></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     loss_value, new_state =  _loss_fn(params, state, batch)</span></span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="co"># grads = jax.grad(_loss_fn)(params, state, batch)</span></span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a><span class="co"># grads</span></span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="co"># update(ms, os, batch)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rng = hk.PRNGSequence(jax.random.PRNGKey(42))</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># def loss_fn(model: ModelStore, batch: Batch) -&gt; float:</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     params, state, apply, _ = model.get()</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     @jax.jit</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     def _loss(params, state, batch)-&gt; jnp.ndarray:</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         bs, *_ = batch.target.shape</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         logits, state = (apply)(params, state, next(rng), batch.input)</span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a><span class="co">#         return jnp.sum(optax.softmax_cross_entropy_with_integer_labels(logits, batch.target)/bs), state</span></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     loss_value, new_state =  _loss(params, state, batch)</span></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     new_model = Model(**(m._asdict()|{'state': new_state}))</span></span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     model.set(new_model)</span></span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     return float(loss_value)</span></span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="co"># loss_fn(ms, batch)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># def get_loss(loss_func, *args): return jax.jit(lambda params: loss_func(get_model(params), *args))</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mse_loss = get_loss(mse, xb,tb) </span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mse_loss, mse_loss(W)</span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co"># from torch.utils.benchmark import Timer</span></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="co"># jax_grad = Timer( stmt="jax.grad(mse_loss)", globals=globals())</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co"># jax_grad.timeit(1000)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class TrainingStore(Writable[TrainingState]):</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     def emit(self, event: Event):</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.set(self.value._replace(last_event=event))</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     # def __getattr__(self, name): # there  is a bug, I can't fi</span></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     if name[:3]=='_s_' : return getattr(self.value, name[3:])</span></span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     else: return super().__getattr__(name)</span></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     # def __setattr__(self, name, value):</span></span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     if name[:3]=='_s_' and hasattr(self.value, name[3:]):</span></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     #         self.set(self.value._replace(**{name[3:]: value}))</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     else: super().__setattr__(name, value)</span></span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __repr__(self) -&gt; str:</span></span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a><span class="co">#         return f"{self.__class__.__name__}:\n{self}"</span></span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __str__(self) -&gt; str:</span></span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a><span class="co">#         state = list(self.value._asdict().items())</span></span>
+<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a><span class="co">#         cbs = [(f"{i}:", v) for i, v in enumerate(self.subscribers)]</span></span>
+<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a><span class="co">#         table = list(itertools.zip_longest(list(zip(*state)),list(zip(*cbs))))</span></span>
+<span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a><span class="co">#         return tabulate(table, headers=['State', 'Calbacks'], tablefmt='grid')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># def __repr__(self) -&gt; str:</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         return f"{self.__class__.__name__}:\n{self}"</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __str__(self) -&gt; str:</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co">#         state = list(self.value._asdict().items())</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         state_t = list(zip(*state))</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         cbs = [(f"{i}:", v) for i, v in enumerate(self.subscribers)]</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         cbs_t = list(zip(*cbs))</span></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         table = list(itertools.zip_longest(*state_t,*cbs_t))</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="co">#         return tabulate(table, headers=['','State','', 'Calbacks'], tablefmt='grid')</span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     # @property</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     # def _(self):</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     """The store value."""</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     return self.value</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     # @_.setter</span></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     # def _(self, value: TrainingState):</span></span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="co">#     #     self.set(value)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -293,6 +1271,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2023, Fred Guth</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://nbdev.fast.ai">Built with <code>nbdev</code></a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fredguth/reax">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

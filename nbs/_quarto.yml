@@ -1,20 +1,53 @@
 project:
   type: website
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+  preview:
+    port: 2401
+    browser: false
 
 website:
   twitter-card: true
   open-graph: true
-  repo-actions: [issue]
   navbar:
-    background: primary
+    background: FloralWhite
     search: true
+    collapse-below: lg
+    left:
+      - text: Svelte Stores in Python
+    right:
+      - icon: github
+        href: "https://github.com/fredguth/reax"
   sidebar:
-    style: floating
+    style: docked
+    contents:
+      - section: Welcome
+        contents: index.ipynb
+      - section: API
+        contents:
+          - 00_stores.ipynb
+          - 10_utils.ipynb
+  page-footer: 
+    left: "Copyright 2023, Fred Guth"
+    right:
+      - text: Built with `nbdev`
+        href: https://nbdev.fast.ai
+      - icon: github
+        href: https://github.com/fredguth/reax
 
-metadata-files: [nbdev.yml, sidebar.yml]
+
+format:
+  html:
+    page-layout: full
+    reference-location: margin
+    citation-location: margin
+    # title-block-style: none
+    css: styles.css
+    number-sections: false
+    linkcolor: Maroon
+    backgroundcolor: FloralWhite
+    sidebarbackgroundcolor: FloralWhite
+    mainfont: "heuristica"
+    toc-location: right
+    toc-title: "Contents"
+    default-image-extension: svg
+
+metadata-files: [nbdev.yml]

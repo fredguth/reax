@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "reax"
+  site-url: "https://fredguth.github.io/reax"
+  description: "Experimental training library for jax"
+  repo-branch: main
+  repo-url: "https://github.com/fredguth/reax"

@@ -5,7 +5,7 @@ __all__ = ['sci_mode', 'pretty_str', 'sparse_join', 'ansi_color', 'to_str', 'str
 
 # %% ../nbs/90_utils.ipynb 3
 from collections import defaultdict
-from tabulate import tabulate
+
 import yaml
 import jax
 import jax.numpy as jnp
