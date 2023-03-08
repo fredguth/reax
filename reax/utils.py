@@ -54,25 +54,27 @@ def to_str(
     color=True ,    # ANSI color highlighting  
     ddof=0          # For "std" unbiasing
     ):
-    x = np.array(x)  # in jnp the code breaks, see https://github.com/google/jax/issues/14721
-    if x.size == 0:
-        return ansi_color("empty", "grey", color)
+    try:
+        x = np.array(x)  # in jnp the code breaks, see https://github.com/google/jax/issues/14721
+        if x.size == 0:
+            return ansi_color("empty", "grey", color)
 
-    zeros = ansi_color("all_zeros", "grey", color) if np.equal(x, 0.0).all() and x.size > 1 else None
-    pinf = ansi_color("+Inf!", "red", color) if np.isposinf(x).any() else None
-    ninf = ansi_color("-Inf!", "red", color) if np.isneginf(x).any() else None
-    nan = ansi_color("NaN!", "red", color) if np.isnan(x).any() else None
+        zeros = ansi_color(f"all_zeros {x.shape}", "grey", color) if np.equal(x, 0.0).all() and x.size > 1 else None
+        pinf = ansi_color("+Inf!", "red", color) if np.isposinf(x).any() else None
+        ninf = ansi_color("-Inf!", "red", color) if np.isneginf(x).any() else None
+        nan = ansi_color("NaN!", "red", color) if np.isnan(x).any() else None
 
-    attention = sparse_join([zeros, pinf, ninf, nan])
-    summary = None
-    if not zeros:
-        # Calculate stats on good values only.
-        gx = x[np.isfinite(x)]
-        minmax = f"x∈[{pretty_str(gx.min())}, {pretty_str(gx.max())}]" if gx.size > 2 else None
-        meanstd = f"μ={pretty_str(gx.mean())} σ={pretty_str(gx.std(ddof=ddof))}" if gx.size >= 2 else None
-        summary = sparse_join([minmax, meanstd])
+        attention = sparse_join([zeros, pinf, ninf, nan])
+        summary = None
+        if not zeros:
+            # Calculate stats on good values only.
+            gx = x[np.isfinite(x)]
+            minmax = f"x∈[{pretty_str(gx.min())}, {pretty_str(gx.max())}]" if gx.size > 2 else None
+            meanstd = f"μ={pretty_str(gx.mean())} σ={pretty_str(gx.std(ddof=ddof))}" if gx.size >= 2 else None
+            summary = sparse_join([minmax, meanstd])
 
-    return sparse_join([summary, attention])
+        return sparse_join([summary, attention])
+    except: return str(x)
 
 
 # %% ../nbs/90_utils.ipynb 10
